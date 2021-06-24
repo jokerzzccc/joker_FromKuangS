@@ -1,0 +1,21 @@
+#mysql5 驱动com.mysql.jdbc.Driver
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis-plus?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+#mysql8
+# 驱动不同 com.mysql.cj.jdbc.Driver，但是，高版本的驱动兼容低版本去驱动，所以，这里可以配置8的驱动。
+# url 且需要设置时区。serverTimezone=Asia/Shanghai
+
+# 配置日志 ,这是mybatis本身的日志，也可以配置其它的，比如log4j,要导依赖
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #逻辑删除配置
+  global-config:
+    db-config:
+      logic-delete-field: deleted  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
