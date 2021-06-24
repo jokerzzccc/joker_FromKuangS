@@ -1,0 +1,22 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: springcloud-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: zuul9527.com #可以随便写，status的
+    prefer-ip-address: true # 显示真实地址
+info:
+  app.name: joker-springcloud
+  company.name: joker.com
+zuul:
+  routes: #看源码，是个map,这下面就是键值对，可以随意配置
+    mydept.serverId: springcloud-provider-dept
+    mydept.path: /mydept/** #这两行的意思，就是，本来是用 springcloud-provider-dept 访问，现在用/mydept/**访问，达到隐藏效果
+  ignored-services: "*" #隐藏全部的真实服务名，使都不能访问
+  prefix: /joker #设置一个公共的前缀
+#  ignored-services: springcloud-provider-dept #使原路径不能访问
