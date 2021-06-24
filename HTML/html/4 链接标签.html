@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>链接标签</title>
+</head>
+<body>
+
+<a name="top">顶部</a><br/>
+
+<!--
+a 标签
+href 必填，表示跳转链接
+target: 表示在窗口哪里打开  _blank : 在新标签页打开，_self 在原本窗口打开
+-->
+<a href="2 BasicTag.html" target="_blank">点击我跳转到2</a><br/>
+<a href="https://www.baidu.com" target="_self">跳转百度</a><br/>
+<!--图像变成超链接-->
+<a href="2 BasicTag.html">
+    <img src="../resources/image/1.png" alt="图片名字" title="悬停文字" width="1000">
+</a>
+
+
+<!--锚链接
+1. 需要一个锚标记 <a name="top">顶部</a>
+2. 跳转到锚标记 <a href="#top">回到顶部</a>
+#
+页内跳转 ， 还可以实现页面间的跳转
+-->
+<a href="#top">回到顶部</a>
+<a name="down">来自3</a>
+
+<!--    功能性链接
+邮件链接：mailto
+-->
+<a href="mailto:kkkk@mail.com">点击联系我</a>
+</body>
+</html>
